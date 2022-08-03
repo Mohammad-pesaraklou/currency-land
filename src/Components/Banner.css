@@ -1,0 +1,20 @@
+.banner {
+background: url('../Assets/banner21.jpg');
+background-position: center;
+background-repeat: no-repeat;
+background-size: cover;
+width: calc(100% - 1px);
+
+height: 350px;
+}
+.tagline{
+
+}
+.bannerContainer{
+height: 200px;
+display: flex;
+flex-direction: column;
+padding-top: 50px;
+justify-content: space-around;
+text-align: center;
+}
