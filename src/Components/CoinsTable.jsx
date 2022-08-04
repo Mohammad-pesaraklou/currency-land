@@ -7,7 +7,7 @@ import { CryptoContexts } from '../Context/CryptoContext';
 import { CoinList } from '../Services/api';
 //material-ui
 import { Container, fontSize } from '@mui/system';
-import { LinearProgress, Table, TableBody, TableCell, TableContainer, TableHead, TableRow, TextField, Typography } from '@mui/material';
+import { LinearProgress, Pagination, Table, TableBody, TableCell, TableContainer, TableHead, TableRow, TextField, Typography } from '@mui/material';
 import { ThemeProvider, createTheme } from '@mui/material/styles';
 import { darkTheme } from '../App';
 
@@ -21,6 +21,7 @@ const CoinsTable = () => {
     const [coins , setCoins] = useState([]);
     const [loading , setLoading] = useState(false);
     const [search , setSearch] = useState("")
+    const [page , setPage] = useState(1)
     const { currency, symbol } = CryptoContexts();
     const navigate = useNavigate();
 
@@ -82,13 +83,14 @@ const CoinsTable = () => {
                             </TableHead>
                             <TableBody>
                                 {
-                                    searchedCoins().map(inf => {
+                                    searchedCoins().slice((page - 1) * 10, (page - 1) * 10 + 10 ).map(inf => {
                                         let profit = inf.price_change_percentage_24h > 0;
 
                 return(
                     <TableRow
                     className='row'
                     key={inf.id}
+                    onClick={() => navigate(`/coin/${inf.id}`)}
                     >
                     <TableCell component="th"
                     scope='row'
@@ -99,11 +101,11 @@ const CoinsTable = () => {
                     >
                     <div style={{display: "flex", flexDirection: "column"}}>
                     <img 
-                    onCLick={() => navigate.push(`/coin/${inf.id}`)}
                     src={inf.image}
                     alt={inf.name}
                     height= "50"
-                    style={{marginBottom: "10px"}}
+                    style={{marginBottom: "10px",cursor: "pointer"
+                }}
                     />
                         <span style={{
                             textTransform: "capitalize",
@@ -130,6 +132,7 @@ const CoinsTable = () => {
                     </TableCell>
                     <TableCell align='right'>
                     {symbol}  {inf?.market_cap.toString().slice(0, -6)}
+                    M
                     </TableCell>
                     </TableRow>
                 )
@@ -140,6 +143,20 @@ const CoinsTable = () => {
                     )
                 }
            </TableContainer>
+           <Pagination 
+           sx={{
+            padding: 10,
+            width: "100%",
+            display: 'flex',
+            justifyContent: "center",
+            color: "gold"
+           }}
+           count={(searchedCoins().length/10).toFixed(0)}
+           onChange={(_,value) => {
+            setPage(value)
+            window.scroll(0,450)
+           }}
+           />
         </Container>
         </ThemeProvider>
     );

@@ -34,7 +34,7 @@ const Header = () => {
                Currency Land
             </NewType>
             </NewLink>
-            <Select variant='outlined' defaultValue={'USD'} sx={{width: 100,height: 40,marginRight: 10}}
+            <Select variant='outlined' defaultValue={'USD'} sx={{width: 100,height: 40,marginRight: 5}}
             onChange={(e) => setCurrency(e.target.value)}
             >
               <MenuItem value={'USD'}>USD</MenuItem>
