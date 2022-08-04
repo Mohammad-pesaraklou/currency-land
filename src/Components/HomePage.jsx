@@ -1,5 +1,8 @@
 import React, { useEffect } from 'react';
+
+// components
 import Banner from './Banner';
+import CoinsTable from './CoinsTable';
 
 
 
@@ -11,6 +14,7 @@ const HomePage = () => {
        <>
         <div>
             <Banner />
+            <CoinsTable />
         </div>
        </>
     );

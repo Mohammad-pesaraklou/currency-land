@@ -4,8 +4,7 @@ background-position: center;
 background-repeat: no-repeat;
 background-size: cover;
 width: calc(100% - 1px);
-
-height: 350px;
+height: 450px;
 }
 .tagline{
 
@@ -17,4 +16,24 @@ flex-direction: column;
 padding-top: 50px;
 justify-content: space-around;
 text-align: center;
+}
+
+.carouselItem{
+margin-top: 40px;
+display: flex;
+justify-content: center;
+align-items: center;
+flex-direction: column;
+text-align: center;
+text-decoration: none;
+color: white;
+text-transform: capitalize;
+}
+.carousel{
+display: flex;
+align-items: center;
+}
+.row{
+    display: flex;
+    flex-direction: column;
 }

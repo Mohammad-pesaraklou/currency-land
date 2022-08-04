@@ -10,7 +10,7 @@ import HomePage from './Components/HomePage';
 import CoinPage from './Components/CoinPage';
 
 
-const darkTheme = createTheme({
+export const darkTheme = createTheme({
   palette: {
     mode: 'dark',
   },

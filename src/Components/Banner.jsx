@@ -3,6 +3,7 @@ import styled from '@emotion/styled';
 import './Banner.css';
 import BannerI from '../Assets/banner21.jpg'
 import { Container, Typography } from '@mui/material';
+import Carousel from './Carousel';
 
 const StyledContainer = styled(Container)`
 /* height: 400px; */
@@ -32,6 +33,7 @@ const Banner = () => {
                 </Typography>
             </div>
         </div>
+        <Carousel />
         </div>
     );
 };
