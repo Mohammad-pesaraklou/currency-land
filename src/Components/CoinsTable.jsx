@@ -1,5 +1,5 @@
 import React,{ useEffect, useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 import axios from 'axios';
 //context
 import { CryptoContexts } from '../Context/CryptoContext';
@@ -23,7 +23,7 @@ const CoinsTable = () => {
     const [search , setSearch] = useState("")
     const [page , setPage] = useState(1)
     const { currency, symbol } = CryptoContexts();
-    const navigate = useNavigate();
+    const navigate = useHistory();
 
     const fetchCoins = async () => {
         setLoading(true)
@@ -90,7 +90,7 @@ const CoinsTable = () => {
                     <TableRow
                     className='row'
                     key={inf.id}
-                    onClick={() => navigate(`/coin/${inf.id}`)}
+                    onClick={() => navigate.push(`/coin/${inf.id}`)}
                     >
                     <TableCell component="th"
                     scope='row'

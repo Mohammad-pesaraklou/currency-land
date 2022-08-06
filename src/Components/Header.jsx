@@ -2,7 +2,7 @@ import React from 'react';
 import { AppBar , Toolbar , Container ,Select , MenuItem, Box, Typography} from '@mui/material';
 import CurrencyBitcoinIcon from '@mui/icons-material/CurrencyBitcoin';
 import styled from '@emotion/styled';
-import { Link, Navigate, useNavigate } from 'react-router-dom';
+import { Link,  useHistory } from 'react-router-dom';
 import { CryptoContexts } from '../Context/CryptoContext';
 
 
@@ -21,7 +21,7 @@ text-decoration: none;
 
 const Header = () => {
 
-    const navigate = useNavigate()
+    const navigate = useHistory()
     const {setCurrency} = CryptoContexts();
 
     return (

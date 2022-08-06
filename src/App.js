@@ -1,5 +1,5 @@
 import './App.css';
-import { Route , Routes } from 'react-router-dom';
+import { Route , Router, Routes, Switch } from 'react-router-dom';
 import { Box} from '@mui/material';
 import { ThemeProvider, createTheme } from '@mui/material/styles';
 import styled from '@emotion/styled';
@@ -14,7 +14,15 @@ export const darkTheme = createTheme({
   palette: {
     mode: 'dark',
   },
-
+  breakpoints: {
+      values: {
+      xs: 0,
+      sm: 600,
+      md: 800,
+      lg: 1500,
+      xl: 1836,
+    },
+  }
   
 });
 
@@ -30,10 +38,10 @@ function App() {
     <Div>
       <ThemeProvider theme={darkTheme}>
     <Header />
-        <Routes>
-          <Route path='/' element={<HomePage />}/>
-          <Route path='/coin/:id' element={<CoinPage />}/>
-        </Routes>
+      <Switch>
+          <Route path='/coin/:id' component={CoinPage}/>
+          <Route path='/' component={HomePage}/>
+      </Switch>
     </ThemeProvider>
     </Div>
   );
