@@ -98,12 +98,12 @@ const CoinPage = () => {
         <Typography variant="h3" className={classes.heading}>
           {coin?.name}
         </Typography>
-        <Typography variant="subtitle1" className={classes.description}>
-          {(coin?.description.en.split(". ")[0])}.
-        </Typography>
+        <p className={classes.description} dangerouslySetInnerHTML={{__html: (coin?.description.en.split(". ")[0])}}>
+          
+        </p>
         <div className={classes.marketData}>
           <span style={{ display: "flex" }}>
-            <Typography variant="h5" className={classes.heading}>
+            <Typography variant="h5" className={classes.heading} sx={{color: 'gold'}}>
               Rank:
             </Typography>
             &nbsp; &nbsp;
@@ -118,7 +118,7 @@ const CoinPage = () => {
           </span>
 
           <span style={{ display: "flex" }}>
-            <Typography variant="h5" className={classes.heading}>
+            <Typography variant="h5" className={classes.heading} sx={{color: 'gold'}}>
               Current Price:
             </Typography>
             &nbsp; &nbsp;
@@ -135,7 +135,7 @@ const CoinPage = () => {
             </Typography>
           </span>
           <span style={{ display: "flex" }}>
-            <Typography variant="h5" className={classes.heading}>
+            <Typography variant="h5" className={classes.heading}  sx={{color: 'gold'}}>
               Market Cap:
             </Typography>
             &nbsp; &nbsp;
