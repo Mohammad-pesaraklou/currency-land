@@ -21,6 +21,7 @@ const CoinInfo = ({coin}) => {
 
     const[chartData , setChartData] = useState([]);
     const[days , setDays] = useState(1);
+    const [flag , setFlag] = useState(false)
     const { currency } = CryptoContexts();
 
     const fetchChartData = async () => {
@@ -96,7 +97,9 @@ const CoinInfo = ({coin}) => {
                   {chartDays.map((day) => (
                     <SelectButton
                       key={day.value}
-                      
+                      onClick={() => {setDays(day.value);
+                        setFlag(false);
+                      }}
                       selected={day.value === days}
                     >
                       {day.label}
