@@ -2,4 +2,5 @@
 
 [Currency Land🧷](https://linktodocumentation)
 
-![App Screenshot](/currency-land/src/Assets/livesitepic.png)
+
+![myPicpng](https://user-images.githubusercontent.com/102437630/212397240-93339332-ec38-4203-9221-ab7a013373dd.png)
