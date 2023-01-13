@@ -145,7 +145,7 @@ const CoinsTable = () => {
            </TableContainer>
            <Pagination 
            sx={{
-            padding: 10,
+            padding: {xs: 3,sm:5,lg: 10},
             width: "100%",
             display: 'flex',
             justifyContent: "center",

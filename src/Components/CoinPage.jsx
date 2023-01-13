@@ -50,13 +50,19 @@ const CoinPage = () => {
       marginTop: 25,
       borderRight: "2px solid grey",
     },
+    imageCoin: {
+      [theme.breakpoints.down("sm")]:{
+        height: "70px"
+      },
+      height: "200px"
+    },
     heading: {
       fontWeight: "bold",
       marginBottom: 20,
       fontFamily: "Montserrat",
     },
     description: {
-      width: "100%",
+      width: "80%",
       fontFamily: "Montserrat",
       padding: 25,
       paddingBottom: 15,
@@ -92,10 +98,11 @@ const CoinPage = () => {
         <img
           src={coin?.image.large}
           alt={coin?.name}
-          height="200"
+          
+          className={classes.imageCoin}
           style={{ marginBottom: 20 }}
         />
-        <Typography variant="h3" className={classes.heading}>
+        <Typography variant="h4" className={classes.heading}>
           {coin?.name}
         </Typography>
         <p className={classes.description} dangerouslySetInnerHTML={{__html: (coin?.description.en.split(". ")[0])}}>
@@ -103,7 +110,7 @@ const CoinPage = () => {
         </p>
         <div className={classes.marketData}>
           <span style={{ display: "flex" }}>
-            <Typography variant="h5" className={classes.heading} sx={{color: 'gold'}}>
+            <Typography variant="h6" className={classes.heading} sx={{color: 'gold'}}>
               Rank:
             </Typography>
             &nbsp; &nbsp;
@@ -118,12 +125,12 @@ const CoinPage = () => {
           </span>
 
           <span style={{ display: "flex" }}>
-            <Typography variant="h5" className={classes.heading} sx={{color: 'gold'}}>
+            <Typography variant="h6" className={classes.heading} sx={{color: 'gold'}}>
               Current Price:
             </Typography>
             &nbsp; &nbsp;
             <Typography
-              variant="h5"
+              variant="h6"
               style={{
                 fontFamily: "Montserrat",
               }}
@@ -135,12 +142,12 @@ const CoinPage = () => {
             </Typography>
           </span>
           <span style={{ display: "flex" }}>
-            <Typography variant="h5" className={classes.heading}  sx={{color: 'gold'}}>
+            <Typography variant="h6" className={classes.heading}  sx={{color: 'gold'}}>
               Market Cap:
             </Typography>
             &nbsp; &nbsp;
             <Typography
-              variant="h5"
+              variant="h6"
               style={{
                 fontFamily: "Montserrat",
               }}
@@ -151,7 +158,7 @@ const CoinPage = () => {
                   .toString()
                   .slice(0, -6)
               )}
-              M
+              
             </Typography>
           </span>
         </div>
